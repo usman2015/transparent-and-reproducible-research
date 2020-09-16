@@ -17,17 +17,24 @@ If you have any complaints/praise, please email:
 Aleksandr Michuda
 amichuda@ucdavis.edu
 
+Oscar Barriga Cabanillas
+obarriga@ucdavis.edu
 
 ---
 
-## Setting up Jupyter Notebooks and RStudio
+## Setting up Jupyter Notebooks/ Jupyter Lab
 
-To install Jupyter Notebooks and Rstudio, please go to [https://www.anaconda.com/download/](https://www.anaconda.com/download/) and download the Python 3.7 version of the Anaconda Distribution. This application installs a Python and R environment on your desktop, as well as some helpful libraries and applications for scientific computing. **Even if you do not plan on using Python or R in the future, (which would be a shame, but regardless) please install this application.** 
+To install Jupyter Notebooks and Rstudio, please go to [https://www.anaconda.com/download/](https://www.anaconda.com/download/) and download the newest version of the Anaconda Distribution. This application installs a Python and R environment on your desktop, as well as some helpful libraries and applications for scientific computing. **Even if you do not plan on using Python or R in the future, (which would be a shame, but regardless) please install this application.** 
 
-
-After a lengthy installation process, you will have access to Rstudio and Jupyter notebook from the Anaconda Navigator (and notice that there is also a program called Anaconda Prompt, this will be important later). Although Jupyter Notebooks should be installed, RStudio may not be. Please go to Anaconda Navigator (it may take a while to load) and in the RStudio box, click install. If Jupyter notebooks does not show as installed, please click to install it as well.
+After a lengthy installation process, you will have access to Jupyter notebook from the Anaconda Navigator (and notice that there is also a program called Anaconda Prompt, this will be important later). If Jupyter notebooks and/or JupyterLab does not show as installed, please click to install it as well.
 
 ## Optional (Installing kernels for other languages)
+
+### Installing the R kernel
+
+Although R has an amazing implementation of dynamic documents in RStudio, you might want to use R in a Jupyter Notebook if you wanted your work to render in Github or for exploration purposes.
+
+Please go to the [IRkernel installation instructions](https://irkernel.github.io/installation/) to learn how to install it.
 
 ### Installing the Stata kernel for Jupyter Notebooks
 
@@ -61,9 +68,9 @@ If you get an error about needing to set your Stata path manually, please refer 
 
 If you have any concerns or problems, please email us.
 
-#### Troubleshooting
+## Troubleshooting
 
-1. > My kernel starts, but it keeps dying! What do I do?
+1. > My stata kernel starts, but it keeps dying! What do I do?
 
 This may be due to the stata path not being defined. There will be a file called ```.stata_kernel.conf``` in your home directory:
 
@@ -81,7 +88,9 @@ stata_path = "C:\Users\<your username>\Stata 15\Stata15-se.exe"
 
 It should now be working!
 
-2. > My kernel doesn't start and the the console states `
+
+
+2. > My stata kernel doesn't start and the the console states `
 AttributeError: 'StataSession' object has no attribute 'stata'`
 
 That is recent bug that has been squashed (see issue [here](https://github.com/kylebarron/stata_kernel/issues/281). Try upgrading the stata kernel: `
@@ -90,13 +99,7 @@ That is recent bug that has been squashed (see issue [here](https://github.com/k
 pip install stata_kernel --upgrade
 ```
 
-Then run:
 
-```
-pip show stata_kernel
-```
-
-The version should say 1.10.1.
 
 
   
