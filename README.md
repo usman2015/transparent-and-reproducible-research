@@ -28,7 +28,25 @@ To install Jupyter Notebooks and Rstudio, please go to [https://www.anaconda.com
 
 After a lengthy installation process, you will have access to Jupyter notebook from the Anaconda Navigator (and notice that there is also a program called Anaconda Prompt, this will be important later). If Jupyter notebooks and/or JupyterLab does not show as installed, please click to install it as well.
 
-## Optional (Installing kernels for other languages)
+## Optional 
+
+## Enabling JupyterLab Extensions
+
+To enable extensions, go to the Extensions Tab in JupyterLab, (the puzzle piece) and enable extensions. After that it should be as easy as searching and installing.
+
+### Installing Jupytext and JupyterLab Extension
+
+If you want a way to have a paired workflow so that your notebook explorations can be written as a script that you can use for better version control or for use with other programs (like `jupyter-book`, `pandoc` or `codebraid`), you can install `jupytext`. More information can be found [here](https://github.com/mwouts/jupytext).
+
+Once `jupytext` is installed search for `jupytext` in the JupyterLab extensions search engine and install the associated extension. It should ask you to "rebuild." Once that's done, go to the "Commands" Tab and search for jupytext. There should be options available to you to pair you notebook.
+
+### Installing `ipywidgets`
+
+To add interactivity to your notebooks, you can install `ipywidgets` and the associated jupyterlab extension. Before that, though:
+
+Run `pip install ipywidgets` or with conda: `conda install -c conda-forge ipywidgets`
+
+Then install the "jupyter-widgets/jupyterlab-manager" extension from within jupyterlab.
 
 ### Installing the R kernel
 
@@ -36,7 +54,7 @@ Although R has an amazing implementation of dynamic documents in RStudio, you mi
 
 Please go to the [IRkernel installation instructions](https://irkernel.github.io/installation/) to learn how to install it.
 
-### Installing the Stata kernel for Jupyter Notebooks
+### Installing the Stata kernel 
 
 Jupyter Notebooks come with so-called "kernels." The kernels are basically the language that will interpret your code. But the beauty of Jupyter notebooks is that they don't need to only have a Python kernel. In fact, for our purposes, a clever guy developed a Stata kernel, that will make our life very easy. The website for the kernel is [here](https://kylebarron.github.io/stata_kernel/). 
 
