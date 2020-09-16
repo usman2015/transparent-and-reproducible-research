@@ -1,6 +1,8 @@
 # bitss-rt2-2020-jupyter
 A repository with resources and instructions for the Jupyter Dynamic Documents presentation at BITSS RT2 2020
 
+Run the notebook in Binder here: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/amichuda/bitss-rt2-2020-jupyter.git/main?filepath=Presentation%2Fpresentation.ipynb)
+
 ---
 
 Please check back often for new and updated materials
