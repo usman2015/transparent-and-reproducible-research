@@ -18,10 +18,8 @@ If you have issues installing/configuring, please open up an issue in this GitHu
 If you have any complaints/praise, please email:
 
 Aleksandr Michuda
-amichuda@ucdavis.edu
 
-Oscar Barriga Cabanillas
-obarriga@ucdavis.edu
+[am2497@cornell.edu](mailto:am2497@cornell.edu)
 
 ---
 
