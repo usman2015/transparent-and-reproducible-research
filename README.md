@@ -2,8 +2,6 @@
 
 Welcome to the repository for the STAAARS+ Trainings for Trainings 5 and 6. Please visit the wiki for information on installation and setup
 
-Run the notebook in Binder here: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/staaars-plus/transparent-and-reproducible-research.git/HEAD)
-
 ---
 
 Please check back often for new and updated materials
