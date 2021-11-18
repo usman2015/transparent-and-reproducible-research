@@ -29,8 +29,6 @@ To install Jupyter Notebooks and Rstudio, please go to [https://www.anaconda.com
 
 After a lengthy installation process, you will have access to Jupyter notebook from the Anaconda Navigator (and notice that there is also a program called Anaconda Prompt, this will be important later). If Jupyter notebooks and/or JupyterLab does not show as installed, please click to install it as well.
 
-## Optional 
-
 ## Enabling JupyterLab Extensions
 
 To enable extensions, go to the Extensions Tab in JupyterLab, (the puzzle piece) and enable extensions. After that it should be as easy as searching and installing.
