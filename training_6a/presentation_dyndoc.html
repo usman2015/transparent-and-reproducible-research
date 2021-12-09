@@ -1,0 +1,291 @@
+<p>/ Stata Do File converted from Jupyter notebook /</p>
+<p># Dynamic Documents with Jupyter Notebooks</p>
+<p>## Before We Begin</p>
+<ul>
+<li>Special thanks to Oscar Barriga Cabanillas for helping out today</li>
+<li>Thank you for BITSS for organizing</li>
+<li>How has it been so far?</li>
+<li>A Question:
+<ul>
+<li>How familiar are you with python? Jupyter?</li>
+<li>What are you thinking of getting out of this talk?</li>
+</ul>
+</li>
+</ul>
+<p>## How to watch this presentation: - Either: - <code>git clone</code> the repository - Start up jupyter lab - open <code>presentation.ipynb</code> - follow along - Or: - Go to the repository and press the <code>Launch Binder</code> Button - To be explained later.</p>
+<p>## Why Dynamic Documents?</p>
+<p>Dynamic Documents are a part of the bigger picture of Reproducible Science. Sure, there is a fixed cost; BUT, they make my life easier in these ways:</p>
+<ul>
+<li>Short term: Easier to document fresh out of the oven results</li>
+<li>Medium term: Fast, reliable and tractable new results</li>
+<li>Long term: You can see how everything was created</li>
+</ul>
+<p>## What are Dynamic Documents?</p>
+<p>Based on principles of literate programming, we aim at combining code and paper in one single document</p>
+<ul>
+<li>Best framework to achieve the holy grail of one-click reproducible workflow</li>
+<li>Best two current implementations: RMarkdown (R) &amp; Jupyter (Python).</li>
+<li>Stata is catching up: We will come back to this in a second</li>
+</ul>
+<p>## The State of Things Now</p>
+<p>Currently, the code and the narrative components live in separate universes</p>
+ <img src="figures/flow_3.png" width="1000">
+<p>## Part of Larger Workflow</p>
+<ul>
+<li>Dynamic documents are best used as part of a larger organized workflow
+<ul>
+<li>Structuring folders: Data, analysis, output</li>
+<li>Documenting code</li>
+<li>Combining both into a final document: Pre analysis or final paper</li>
+</ul>
+</li>
+</ul>
+<p>## Markdown&rsquo;s Entrance</p>
+<ul>
+<li>In terms of writing the &ldquo;paper&rdquo;/documentation part of dynamic documents, there are many solutions
+<ul>
+<li>Latex, HTML, RST (ReStructured Text)</li>
+</ul>
+</li>
+<li>But most have honed in on using Markdown
+<ul>
+<li>Markdown is an easy way to write formatted text in a plain text format</li>
+<li>But without as verbose and difficult of a syntax like latex/HTML</li>
+</ul>
+</li>
+<li>Although basic markdown has the basics for formatting, creating tables, adding figures</li>
+<li>We will use Pandoc, which is used in both the Stata and R sessions</li>
+</ul>
+<p>## Markdown Cheatsheet</p>
+<p>There are loads of markdown cheatsheats on the web. One can be found <a href="https://www.markdownguide.org/cheat-sheet/">here</a></p>
+<p>## Headings</p>
+<pre><code>Title -&gt; # Title
+Section -&gt; ## Section
+Subsection -&gt; ### Subsection
+Subsubsubsection -&gt;  #### Subsubsubsection
+</code></pre>
+<p>## Lists</p>
+<ul>
+<li>My list
+<ul>
+<li>an italic and bold nested list</li>
+</ul>
+</li>
+</ul>
+<pre><code>- My List
+    - an italic and bold nested list
+</code></pre>
+<p>## Math</p>
+<p>We assume that comparative advantage is $\alpha$ and $\alpha = \beta + \gamma$</p>
+<pre><code>We assume that comparative advantage is $\alpha$ and $\alpha = \beta + \gamma$
+</code></pre>
+<p>$$\begin{aligned} y_{it} = X_{it}\beta + \varepsilon_{it} \ X_{it}  = Z_{it}\gamma + \nu_{it} \end{aligned}$$</p>
+<pre><code>$$\begin{aligned}
+y_{it} = X_{it}\beta + \varepsilon_{it} \\
+X_{it}  = Z_{it}\gamma + \nu_{it}
+\end{aligned}$$
+</code></pre>
+<p>## What is Pandoc?</p>
+<ul>
+<li>Pandoc is sort of what it says: pan (all), doc (document)</li>
+<li>It&rsquo;s a way to convert between and across different file formats
+<ul>
+<li>Word -&gt; HTML</li>
+<li>Latex -&gt; Markdown</li>
+<li>HTML -&gt; XML</li>
+<li>Anything to anything</li>
+</ul>
+</li>
+<li>See Pandoc&rsquo;s <a href="https://pandoc.org/MANUAL.html#options">website</a> for all input and output filetypes</li>
+</ul>
+<p>## The Magic of Pandoc</p>
+<ul>
+<li>Pandoc and Markdown allows you to create one file that can then be used in many different places</li>
+<li>Example:
+<ul>
+<li>You&rsquo;re writing your CV and want to put it up in various places.</li>
+<li>Your website needs HTML</li>
+<li>One job posting allows PDF</li>
+<li>One job posting only allows Word</li>
+</ul>
+</li>
+<li>Ordinarily, you would need to have three versions, Word, HTML, PDF
+<ul>
+<li>This might get unruly as you change one but forget to change the other</li>
+<li>What if there&rsquo;s another file format you might need?</li>
+</ul>
+</li>
+<li>With Pandoc and markdown, you would:
+<ul>
+<li>write your CV in markdown</li>
+<li>convert to PDF, Word and PDF with pandoc</li>
+</ul>
+</li>
+</ul>
+<p>## What are Jupyter Notebooks?</p>
+<ul>
+<li>A way to do literate programming and dynamic documents</li>
+<li>Provide code and writing/analysis, on a language agnostic platform
+<ul>
+<li>Meaning that it is not restricted to just one language</li>
+<li>Currently there are so-called kernels for many languages</li>
+<li>Including Stata, Python, R, C, Golang, C++, Fortran and more coming!</li>
+</ul>
+</li>
+<li>Uses the power of Markdown/Latex Math and Code to tell a story and provide an efficient workflow</li>
+<li>Convert into several different formats including Latex, HTML, Presentations etc&hellip;</li>
+<li>The Jupyter server is also available in other text editors such as Atom and VS Code.</li>
+<li>And now available in STATA!</li>
+</ul>
+<p>## Under the Hood</p>
+<ul>
+<li>You can think of Jupyter as broadly being made up of two parts:
+<ul>
+<li>A JSON document that organizes text between markdown, code, figures, widgets, etc&hellip;</li>
+<li>A server that loads a &ldquo;kernel&rdquo; with a particular language and knows how to translate the markdown to formatted text and the code to execution</li>
+<li>A web interface (although not required)</li>
+</ul>
+</li>
+</ul>
+ <img src="figures/DeepinScreenshot_select-area_20190107171714.png" width=600>
+<p>## Why Jupyter Notebooks?</p>
+<ul>
+<li>Jupyter is ubiquitous</li>
+<li>Jupyter is used by basically all of the data science community</li>
+<li>Jupyter is used by other software (VS Code, Atom/Hydrogen)</li>
+<li>Since Jupyter is a JSON document and built using web tools, anything that uses webtools can use it</li>
+<li>Science and publishing is changing (PDFs are becoming old, open access and web journals are becoming more popular)
+<ul>
+<li>Present results in a dynamic way</li>
+<li>Interactive</li>
+<li>More efficient to show quick interactive widget to experiment with colleagues/advisors than 50 figures in a static PDF</li>
+</ul>
+</li>
+</ul>
+<p>## Extensions</p>
+<p>JupyterLab (the web interface) comes with many extensions for anything you might want:</p>
+<ul>
+<li>A language server</li>
+<li>multicursor support</li>
+<li>git integration</li>
+<li>and more&hellip;</li>
+</ul>
+<p>## Running Code</p>
+<p>. set obs 10 number of observations (_N) was 0, now 10</p>
+<p>. . gen x = runiform()</p>
+<p>. gen treat = x &gt; .2</p>
+<p>. gen y = runiform()</p>
+<p>## Figures</p>
+<p>. twoway scatter y x</p>
+<img src="graph.svg" height="400" alt="scatter y x" >
+<p>## Kernel Magics</p>
+<ul>
+<li>Many Jupyter kernels have something called magics
+<ul>
+<li>A way to make certain actions easy without having to write too much code</li>
+<li>Often language specific</li>
+</ul>
+</li>
+<li>All Stata magics can be found <a href="https://kylebarron.dev/stata_kernel/using_stata_kernel/magics/">here</a></li>
+</ul>
+<table>
+<thead>
+<tr><th>y           </th><th>      Coef.</th><th>   Std. Err.</th><th>      t </th><th> P&gt;|t|</th><th colspan="2">[95% Conf. Interval]     </th></tr>
+</thead>
+<tbody>
+<tr><td>treat        </td><td> -.4331311 </td><td>  .3724717 </td><td>   -1.16 </td><td>  0.283 </td><td>   -1.313887 </td><td>   .4476247 </td></tr>
+<tr><td>x            </td><td>  .2988533 </td><td>  .3547913 </td><td>    0.84 </td><td>  0.427 </td><td>   -.5400948 </td><td>   1.137801 </td></tr>
+<tr><td>_cons        </td><td>  .7115171</td><td>  .2752044 </td><td>    2.59 </td><td>  0.036 </td><td>    .0607622 </td><td>   1.362272 </td></tr>
+</tbody>
+</table>
+<p>## Exporting</p>
+<ul>
+<li>Exporting to HTML, PDF and slides is possible through the menu: File -&gt; Export Notebook as -&gt; PDF</li>
+</ul>
+<p>## Binder and Hosting Notebooks</p>
+<ul>
+<li>Jupyter is great and all, but what if you advisor/boss doesn&rsquo;t have Jupyter installed?</li>
+<li>What if they do, but they don&rsquo;t have all the dependencies needed for your cool dashboard?</li>
+<li>That&rsquo;s where binder comes in</li>
+<li>Binder uses <code>docker</code> to create a containerized version of your notebook with all dependencies installed and anyone can access it even if they don&rsquo;t have jupyter installed at all.</li>
+<li>They just need a web browser</li>
+<li>We&rsquo;ve already seen how this works, either with the dashboard or with this very presentation!</li>
+<li>All you need is a public github repository and notebook in that repository and that&rsquo;s it!</li>
+<li>Waiting time for spinning up the notebook will vary</li>
+<li>While it&rsquo;s spinning it up, any questions so far?</li>
+</ul>
+<p>## Port-forwarding and setting up Jupyter to work on a server</p>
+<ul>
+<li>Many people might have servers in their universities/organizations that are more powerful than a laptop.</li>
+<li>Jupyter allows the ability to run a notebook locally (on your laptop screen), but using the power of the server.
+<ul>
+<li>This requires jupyter being installed on the server</li>
+<li>This isn&rsquo;t a difficult thing to do for a sysadmin, so it&rsquo;s worth finding out whether that&rsquo;s possible</li>
+</ul>
+</li>
+</ul>
+<p>### Setting up jupyter on a server</p>
+<ul>
+<li>The first thing you need to do is log on to the server and start a jupyter instance:</li>
+</ul>
+<p><code>jupyter notebook --no-browser --port=8888</code></p>
+<ul>
+<li>This tells the server to start an instance of jupyter, without a browser (we won&rsquo;t need it, nor can a server open up a browser window), in port 8888 (this will be important later)</li>
+<li>For Mac users, you can use <code>ssh</code> to finish the process. Just type: <code>ssh username@host -L 8888:localhost:8888</code></li>
+<li>Which will forward your computer 8888 port, to the server&rsquo;s 8888 port.</li>
+<li>
+<p>For Windows, ssh also exists, but you will need to enable it.</p>
+<ul>
+<li>head to Settings &gt; Apps and click “Manage optional features” under Apps &amp; features.</li>
+<li>Click Add a Feature, and find OpenSSH</li>
+</ul>
+</li>
+<li>Then use the same command as for Macs: <code>ssh username@host -L 8888:localhost:8888</code></li>
+<li>
+<p>Then go to your browser:</p>
+<ul>
+<li><code>localhost:8888</code> and you should be taken to a Jupyter page and prompted for a token.</li>
+<li>You can find this token in the window where you started Jupyter on the server
+<ul>
+<li>Copy and paste this token into the prompt, and VOILA!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now you have Jupyter running on your computer&rsquo;s browser window, but with the power of the server!</li>
+</ul>
+<p>## Taking all this to Pure Text</p>
+<ul>
+<li>One drawback of jupyter (besides dependencies) is the fact that you need to install all of this and use a browser</li>
+<li>Not very good for version control</li>
+<li><code>Rmd</code> files (used with RMarkdown) are just markdown files with code cells.
+<ul>
+<li>Great for version control</li>
+<li>Readble</li>
+<li>Easy to share and read in its raw form</li>
+</ul>
+</li>
+<li>Can we do this with Jupyter?
+<ul>
+<li>Yes! with <code>jupytext</code></li>
+</ul>
+</li>
+</ul>
+<p>## Shameless self-promotion</p>
+<ul>
+<li>Export notebook to a do-file!</li>
+</ul>
+<p><a href="https://github.com/amichuda/jupyter-doexport">https://github.com/amichuda/jupyter-doexport</a></p>
+<p>## A Stata Equivalent?</p>
+<ul>
+<li><code>stata-markdown</code></li>
+<li><code>dyndoc</code></li>
+<li><code>putdocx</code></li>
+<li><code>putpdf</code></li>
+</ul>
+<p>## Other Extras not Covered</p>
+<ul>
+<li><code>jupyter-cache</code></li>
+<li><code>codebraid</code></li>
+<li><code>binder</code> and <code>docker</code></li>
+</ul>
