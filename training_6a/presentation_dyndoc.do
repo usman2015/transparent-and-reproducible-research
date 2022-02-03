@@ -182,7 +182,6 @@ Stata Do File converted from Jupyter notebook
  ## Running Code
 
 
-
 <<dd_do>>
 set obs 10
 
